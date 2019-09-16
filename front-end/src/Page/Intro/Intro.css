@@ -1,0 +1,30 @@
+.IntroOutSide{
+    width:100%;
+    height:calc(100vh - 45px);
+    background: url(https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1567156065122&di=ec7818518546f350e7a06885cf56529c&imgtype=0&src=http%3A%2F%2Fb-ssl.duitang.com%2Fuploads%2Fitem%2F201506%2F27%2F20150627190412_s8yrz.jpeg);
+    background-size:100% 100%;
+    background-position: center center;
+}
+.IntroLand{
+    width:100%;
+    height:calc(100vh - 45px);
+    background: url(https://ak.hypergryph.com/assets/index/images/ak/sp/faction/1.png);
+    background-size:50%;
+    background-repeat: no-repeat;
+    background-position-x: right;
+}
+.IntroInSide{
+    width:100%;
+    height:calc(100vh - 45px);
+    background: url(https://ak.hypergryph.com/assets/index/images/ak/sp/characters/amiya.png);
+    background-size:cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+
+    color:#ffffff;
+    font-weight: bold;
+    font-size:15px;
+
+    padding:175px 0px 0px 225px;
+
+}
