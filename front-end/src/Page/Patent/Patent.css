@@ -1,0 +1,20 @@
+.PatentOutSide{
+    width:100%;
+    height:calc(100vh - 45px);
+    background: #efefef;
+    background-size:100% 100%;
+    background-position: center center;
+}
+.ellipsis2{
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+}
+.ellipsis1{
+    width: 100%;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}

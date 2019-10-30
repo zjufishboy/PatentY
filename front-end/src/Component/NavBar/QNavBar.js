@@ -1,12 +1,10 @@
 import React from "react";
 import "../../css/common.css";
 import "./QNavBar.css";
-import { Avatar, Drawer, Icon } from "antd";
-import { Link } from "react-router-dom";
+import { Avatar, Drawer } from "antd";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faQrcode,
-  faMoon,
   faIdCard,
   faStar,
   faAngleRight
@@ -18,7 +16,7 @@ const data = [
 ];
 class QNavBar extends React.Component {
   constructor(props) {
-    super();
+    super(props);
     this.state = {
       FunctBarVisible: false
     };
@@ -33,23 +31,42 @@ class QNavBar extends React.Component {
     this.setState({ FunctBarVisible: false });
   };
   listToDiv = item => (
-    <div className="ItemNav ccFlexRow" key={item.name}>
-      <Link
-        to={item.to}
+    <div
+      className="ItemNav ccFlexRow"
+      key={item.name}
+      style={
+        "/" + this.props.match.params.menu === item.to
+          ? {
+              background: "rgba(0,0,0,0.1)"
+            }
+          : {
+              background: "rgba(0,0,0,0)"
+            }
+      }
+      onClick={()=>{
+        this.onClose();
+        if(this.props.match.params.menu!=="home")
+          this.props.history.replace(item.to);
+        else
+          this.props.history.push(item.to);
+      }}
+    >
+      <div
+        
         className="scFlexRow"
-        style={{ margin: "0px 10px 0px 20px" }}
-        onClick={this.onClose}
+        style={{ margin: "0px 10px 0px 20px",width:"100%" }}
+
       >
         <FontAwesomeIcon
           icon={item.iconFA}
           style={{ margin: "0px 30px 0px 0px" }}
         />
         <span style={{ fontSize: 20 }}>{item.name}</span>
-      </Link>
+      </div>
     </div>
   );
   listToDivBelow = item => (
-    <div className="ccFlexRow" style={{ width: "30%" }}>
+    <div className="ccFlexRow" style={{ width: "30%" }} key={item.name}>
       <div
         className="ccFlexRow"
         style={{
@@ -67,7 +84,7 @@ class QNavBar extends React.Component {
     </div>
   );
   dataToDiv = item => (
-    <div className="ccFlexColumn" style={{ width: 60 }}>
+    <div className="ccFlexColumn" style={{ width: "30%" }} key={item.name}>
       <div className="ccFlexRow">{item.data}</div>
       <div className="ccFlexRow">{item.name}</div>
     </div>
@@ -82,13 +99,15 @@ class QNavBar extends React.Component {
             closable={false}
             onClose={this.onClose}
             visible={this.state.FunctBarVisible}
-            width={300}
+            width={"70%"}
             bodyStyle={{
               display: "flex",
               flexDirection: "column",
               justifyContent: "space-between",
               height: "100%",
-              background: "#efefef"
+              background: "#efefef",
+              padding: "24px 0px 0px 0px",
+              minWidth:250
             }}
           >
             <div className="ItemsNav ccFlexColumn">
@@ -213,7 +232,8 @@ class QNavBar extends React.Component {
                   height: 60,
                   borderBottom: "1px solid #dfdfdf",
                   borderTop: "1px solid #dfdfdf",
-                  padding: "0px 30px"
+                  padding: "0px 30px",
+                  marginBottom: 10
                 }}
               >
                 {data.map(this.dataToDiv)}
@@ -222,7 +242,10 @@ class QNavBar extends React.Component {
                 ? this.props.FunctionArray.function.map(this.listToDiv)
                 : null}
             </div>
-            <div className="NavButtonBar acFlexRow">
+            <div
+              className="NavButtonBar acFlexRow"
+              style={{ borderTop: "1px solid #dfdfdf", height: 50 }}
+            >
               {this.props.FunctionArray
                 ? this.props.FunctionArray.underFunction.map(
                     this.listToDivBelow
@@ -230,11 +253,10 @@ class QNavBar extends React.Component {
                 : null}
             </div>
           </Drawer>
-          <div className="NavBarIcon ccFlexRow">
+          <div className="NavBarIcon ccFlexRow" onClick={this.onStart}>
             <Avatar
               style={{ backgroundColor: "#ffffff" }}
               src="http://q1.qlogo.cn/g?b=qq&nk=1647075274&s=640"
-              onClick={this.onStart}
             />
           </div>
           {this.props.title}

@@ -1,7 +1,7 @@
 .IntroOutSide{
     width:100%;
     height:calc(100vh - 45px);
-    background: url(https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1567156065122&di=ec7818518546f350e7a06885cf56529c&imgtype=0&src=http%3A%2F%2Fb-ssl.duitang.com%2Fuploads%2Fitem%2F201506%2F27%2F20150627190412_s8yrz.jpeg);
+    background: #efefef;
     background-size:100% 100%;
     background-position: center center;
 }
@@ -27,4 +27,17 @@
 
     padding:175px 0px 0px 225px;
 
+}
+.ellipsis2{
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+}
+.ellipsis1{
+    width: 100%;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
 }

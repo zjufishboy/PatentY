@@ -1,6 +1,8 @@
 {
-  "short_name": "React App",
-  "name": "Create React App Sample",
+  "name": "移动化区块链专利系统",
+  "short_name": "PatentY",
+  "description":"基于区块链3.0的专利交易系统",
+  "orientation":"portrait-primary",
   "icons": [
     {
       "src": "favicon.ico",
@@ -8,15 +10,10 @@
       "type": "image/x-icon"
     },
     {
-      "src": "logo192.png",
+      "src": "192.png",
       "type": "image/png",
       "sizes": "192x192"
-    },
-    {
-      "src": "logo512.png",
-      "type": "image/png",
-      "sizes": "512x512"
-    }	    
+    }
   ],
   "start_url": ".",
   "display": "standalone",

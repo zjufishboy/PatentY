@@ -1,0 +1,10 @@
+.TranOutSide{
+    width:100%;
+    height:calc(100vh - 45px);
+    background: #0c133d;
+    padding:10px 2% 0 2%;
+    color:white;
+}
+.TranOutSide p{
+    margin: 0;
+}
